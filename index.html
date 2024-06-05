@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/icon/icon.png"> 
+
+    <title>El Pollo Loco</title>
+
+    <script src="./classes/drawable-object.class.js"></script>
+    <script src="./classes/moveable-object.class.js"></script>
+    <script src="./classes/endscreen.class.js"></script>
+    <script src="./classes/winnerscreen.class.js"></script>
+    <script src="./classes/character.class.js"></script>
+    <script src="./classes/chicken.class.js"></script>
+    <script src="./classes/chickenSmall.class.js"></script>
+    <script src="./classes/clouds.class.js"></script>
+    <script src="./classes/statusBar.class.js"></script>
+    <script src="./classes/coinBar.class.js"></script>
+    <script src="./classes/bottleBar.class.js"></script>
+    <script src="./classes/endbossBar.class.js"></script>
+    <script src="./classes/world.class.js"></script>
+    <script src="./classes/background-object.class.js"></script>
+    <script src="./classes/keyboard.class.js"></script>
+    <script src="./classes/level.class.js"></script>
+    <script src="./classes/throwable-object.class.js"></script>
+    <script src="./classes/coins.class.js"></script>
+    <script src="./classes/bottle.class.js"></script>
+    <script src="./classes/endboss.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./js/game.js"></script>
+</head>
+
+<body onload="start()">
+
+    <h1>El Pollo Loco</h1>
+    <div id="startscreen" class="startscreen">
+        <img class="startImage" src="img/9_intro_outro_screens/start/startscreen_1.png">
+        <div id="buttons" class="buttons">
+            <button id="startButton" class="startbutton" onclick="init()">Start game</button>
+            <button id="controlButton" class="controlButton" onclick="openControls()">controls</button>
+        </div>
+    </div>
+
+
+    <div id="controlsContainer" class="controlsContainer">
+        <div class="X">
+            <button class="closeButton" onclick="closeControls()">
+                <img src="img/icon/X.png">
+            </button>
+        </div>
+        <div class="controlsContainerSeperate">
+            <img src="img/icon/left_arrow.png">
+            <span>Left</span>
+        </div>
+        <div class="controlsContainerSeperate">
+            <img src="img/icon/right_arrow.png">
+            <span>Right</span>
+        </div>
+        <div class="controlsContainerSeperate">
+            <img src="img/icon/spacebar.png">
+            <span>Spacebar</span>
+        </div>
+        <div class="controlsContainerSeperate">
+            <img src="img/icon/D.png">
+            <span>Throw</span>
+        </div>
+    </div>
+
+
+    <div id="endscreen" class="endscreen">
+        <canvas id="canvas" class="canvas" width="720" height="480"></canvas>
+        <button id="muteButtonCanvas" class="muteButtonCanvas" onclick="mutePlay()">
+            <img class="mutePicture" id="mutePictureCanvas" src="img/icon/speaker.png">
+        </button>
+        <div class="mobile" id="btns">
+            <div class="movebtns" id="movebtns">
+                <button class="btn" id="leftBtn">
+                    <img src="img/icon/left.png">
+                </button>
+                <button class="btn" id="rightBtn">
+                    <img src="img/icon/right.png">
+                </button>
+            </div>
+            <div class="throwJump" id="throwJump">
+                <button class="btn" id="throwBtn">
+                    <img src="img/icon/bottle.png">
+                </button>
+                <button class="btn" id="jumpBtn">
+                    <img src="img/icon/up.png">
+                </button>
+            </div>
+        </div>
+        <button id="restartButton" class="restartButton" onclick="world.restartGame()">Restart Game</button>
+    </div>
+
+
+</body>
+
+</html>
